@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -145,7 +147,23 @@ fun FormPendaftaran(modifier : Modifier) {
                         textAlamat = it
                     }
                 )
-
+                Button(
+                    modifier = Modifier.fillMaxWidth()
+                        .padding(5.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.Black,
+                        contentColor = Color.White
+                    ),
+                    enabled= textAlamat.isNotEmpty() && textNama.isNotEmpty() && textJK.isNotEmpty() && textStatus.isNotEmpty(),
+                    onClick = {
+                        nama = textNama
+                        jenis=textJK
+                        status=textStatus
+                        alamat=textAlamat
+                    }
+                ){
+                    Text(stringResource(R.string.submit))
+                }
             }
         }
     }
