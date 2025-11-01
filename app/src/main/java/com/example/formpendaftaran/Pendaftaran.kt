@@ -4,6 +4,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -53,5 +55,14 @@ fun FormPendaftaran(modifier : Modifier) {
 
     Box(modifier = modifier.fillMaxSize()
         .background(color = Color.DarkGray)) {
+
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(defaultElevation = 50.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.LightGray),
+            modifier = Modifier
+                .padding(20.dp)
+
+
+        ){}
     }
 }
