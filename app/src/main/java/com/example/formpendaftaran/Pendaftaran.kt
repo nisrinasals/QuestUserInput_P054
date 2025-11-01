@@ -15,7 +15,16 @@ import androidx.compose.ui.graphics.Color
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopBar(modifier: Modifier = Modifier){
-
+    TopAppBar(modifier = Modifier.padding(top = 50.dp),
+        title = { Text(text= "Formulir Pendaftaran",
+            color = Color.White,
+            fontFamily = FontFamily.SansSerif,
+            fontSize = 30.sp,
+        ) },
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = Color.Black
+        )
+    )
 }
 
 
