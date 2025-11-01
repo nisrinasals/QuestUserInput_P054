@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.formpendaftaran.FormPendaftaran
+import com.example.formpendaftaran.TopBar
 import com.example.formpendaftaran.ui.theme.FormPendaftaranTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +21,15 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FormPendaftaranTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                Scaffold(
+                    topBar = { TopBar()}
+                ) { innerPadding ->
+                    FormPendaftaran(
                         modifier = Modifier.padding(innerPadding)
+
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FormPendaftaranTheme {
-        Greeting("Android")
     }
 }
