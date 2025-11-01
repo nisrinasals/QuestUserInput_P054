@@ -19,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -66,7 +67,11 @@ fun FormPendaftaran(modifier : Modifier) {
         ){
             Column(modifier=Modifier.padding(20.dp),
                 verticalArrangement = Arrangement.Top
-            ){}
+            ){
+                Text(stringResource(R.string.nama).uppercase(),
+                    modifier = Modifier.padding(5.dp)
+                )
+            }
         }
     }
 }
