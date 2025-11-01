@@ -1,7 +1,9 @@
 package com.example.formpendaftaran
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CardDefaults
@@ -61,8 +63,10 @@ fun FormPendaftaran(modifier : Modifier) {
             colors = CardDefaults.cardColors(containerColor = Color.LightGray),
             modifier = Modifier
                 .padding(20.dp)
-
-
-        ){}
+        ){
+            Column(modifier=Modifier.padding(20.dp),
+                verticalArrangement = Arrangement.Top
+            ){}
+        }
     }
 }
