@@ -113,6 +113,25 @@ fun FormPendaftaran(modifier : Modifier) {
                 Text(stringResource(R.string.status).uppercase(),
                     modifier = Modifier.padding(5.dp)
                 )
+                Column(
+                    modifier = Modifier.padding(5.dp)
+                ) {
+                    statusKawin.forEach { item ->
+                        Row(
+                            modifier = Modifier.selectable(
+                                selected = textStatus == item,
+                                onClick = { textStatus = item }
+                            ), verticalAlignment = Alignment.CenterVertically) {
+                            RadioButton(
+                                selected = textStatus == item,
+                                onClick = {
+                                    textStatus = item
+                                })
+                            Text(item)
+                        }
+                    }
+                }
+
             }
         }
     }
