@@ -110,7 +110,9 @@ fun FormPendaftaran(modifier : Modifier) {
                         }
                     }
                 }
-
+                Text(stringResource(R.string.status).uppercase(),
+                    modifier = Modifier.padding(5.dp)
+                )
             }
         }
     }
