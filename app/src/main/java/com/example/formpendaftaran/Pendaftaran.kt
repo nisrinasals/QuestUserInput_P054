@@ -85,6 +85,9 @@ fun FormPendaftaran(modifier : Modifier) {
                         textNama = it
                     },
                 )
+                Text(stringResource(R.string.jenis).uppercase(),
+                    modifier = Modifier.padding(5.dp)
+                )
 
             }
         }
