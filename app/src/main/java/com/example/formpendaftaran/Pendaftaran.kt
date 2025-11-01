@@ -5,8 +5,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
@@ -35,17 +37,23 @@ import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBar(modifier: Modifier = Modifier){
-    TopAppBar(modifier = Modifier.padding(top = 50.dp),
-        title = { Text(text= "Formulir Pendaftaran",
-            color = Color.White,
-            fontFamily = FontFamily.SansSerif,
-            fontSize = 30.sp,
-        ) },
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color.Black
+fun TopBar(modifier: Modifier = Modifier) {
+    Column(modifier = modifier) {
+        Spacer(modifier = Modifier.height(50.dp))
+        TopAppBar(
+            title = {
+                Text(
+                    text = "Formulir Pendaftaran",
+                    color = Color.White,
+                    fontFamily = FontFamily.SansSerif,
+                    fontSize = 30.sp,
+                )
+            },
+            colors = TopAppBarDefaults.topAppBarColors(
+                containerColor = Color.Black
+            )
         )
-    )
+    }
 }
 
 
@@ -65,7 +73,8 @@ fun FormPendaftaran(modifier : Modifier) {
     val gender: List<String> =listOf("Laki-laki", "Perempuan")
     val statusKawin: List<String> = listOf("Janda", "Lajang", "Duda")
 
-    Box(modifier = modifier.fillMaxSize()
+    Box(modifier = modifier
+        .fillMaxSize()
         .background(color = Color.DarkGray)) {
 
         ElevatedCard(
@@ -77,21 +86,22 @@ fun FormPendaftaran(modifier : Modifier) {
             Column(modifier=Modifier.padding(20.dp),
                 verticalArrangement = Arrangement.Top
             ){
-                Text(stringResource(R.string.nama).uppercase(),
+                Text(text=stringResource(R.string.nama).uppercase(),
                     modifier = Modifier.padding(5.dp)
                 )
                 OutlinedTextField(
                     value = textNama,
                     singleLine = true,
                     shape = MaterialTheme.shapes.large,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier
+                        .fillMaxWidth()
                         .padding(5.dp),
                     label = { Text(text = "Isian Nama Lengkap")},
                     onValueChange = {
                         textNama = it
                     },
                 )
-                Text(stringResource(R.string.jenis).uppercase(),
+                Text(text=stringResource(R.string.jenis).uppercase(),
                     modifier = Modifier.padding(5.dp)
                 )
                 Column(
@@ -108,11 +118,11 @@ fun FormPendaftaran(modifier : Modifier) {
                                 onClick = {
                                     textJK = item
                                 })
-                            Text(item)
+                            Text(text=item)
                         }
                     }
                 }
-                Text(stringResource(R.string.status).uppercase(),
+                Text(text=stringResource(R.string.status).uppercase(),
                     modifier = Modifier.padding(5.dp)
                 )
                 Column(
@@ -129,18 +139,19 @@ fun FormPendaftaran(modifier : Modifier) {
                                 onClick = {
                                     textStatus = item
                                 })
-                            Text(item)
+                            Text(text=item)
                         }
                     }
                 }
-                Text(stringResource(R.string.alamat).uppercase(),
+                Text(text=stringResource(R.string.alamat).uppercase(),
                     modifier = Modifier.padding(5.dp)
                 )
                 OutlinedTextField(
                     value = textAlamat,
                     singleLine = true,
                     shape = MaterialTheme.shapes.large,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier
+                        .fillMaxWidth()
                         .padding(5.dp),
                     label = { Text(text = "Alamat")},
                     onValueChange = {
@@ -148,7 +159,8 @@ fun FormPendaftaran(modifier : Modifier) {
                     }
                 )
                 Button(
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier
+                        .fillMaxWidth()
                         .padding(5.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Black,
@@ -162,7 +174,7 @@ fun FormPendaftaran(modifier : Modifier) {
                         alamat=textAlamat
                     }
                 ){
-                    Text(stringResource(R.string.submit))
+                    Text(text=stringResource(R.string.submit))
                 }
             }
         }
