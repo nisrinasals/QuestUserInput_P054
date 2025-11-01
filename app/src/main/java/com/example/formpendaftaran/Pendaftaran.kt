@@ -134,6 +134,18 @@ fun FormPendaftaran(modifier : Modifier) {
                 Text(stringResource(R.string.alamat).uppercase(),
                     modifier = Modifier.padding(5.dp)
                 )
+                OutlinedTextField(
+                    value = textAlamat,
+                    singleLine = true,
+                    shape = MaterialTheme.shapes.large,
+                    modifier = Modifier.fillMaxWidth()
+                        .padding(5.dp),
+                    label = { Text(text = "Alamat")},
+                    onValueChange = {
+                        textAlamat = it
+                    }
+                )
+
             }
         }
     }
